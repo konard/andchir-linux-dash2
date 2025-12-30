@@ -88,6 +88,7 @@ nav-bar .right-content {
 
 nav-bar .right-content a {
     color: var(--flat-text-secondary);
+    padding-top: 0;
 }
 
 nav-bar .right-content a:hover {

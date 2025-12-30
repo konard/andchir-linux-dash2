@@ -7,15 +7,15 @@
  *   gulp --gulpfile gulpfile_skins.js watch    # Watch for changes only
  */
 
-var g       = require('gulp');
-var concat  = require('gulp-concat');
-var cssmin  = require('gulp-cssmin');
-var gutil   = require('gulp-util');
-var fs      = require('fs');
-var path    = require('path');
+const { src, dest, watch, series, parallel } = require('gulp');
+const concat  = require('gulp-concat');
+const cleanCss = require('gulp-clean-css');
+const log     = require('fancy-log');
+const fs      = require('fs');
+const path    = require('path');
 
-var skinsDir = 'src/css/skins';
-var distDir = 'app/skins';
+const skinsDir = 'src/css/skins';
+const distDir = 'app/skins';
 
 /**
  * Get list of skin directories
@@ -33,26 +33,26 @@ function getSkinDirs() {
  * Build a single skin
  */
 function buildSkin(skinName) {
-    var skinPath = path.join(skinsDir, skinName, '*.css');
-    var outputFile = skinName + '.min.css';
+    const skinPath = path.join(skinsDir, skinName, '*.css');
+    const outputFile = skinName + '.min.css';
 
-    return g.src(skinPath)
-        .pipe(cssmin())
+    return src(skinPath)
+        .pipe(cleanCss())
         .pipe(concat(outputFile))
-        .on('error', gutil.log)
-        .pipe(g.dest(distDir));
+        .on('error', log)
+        .pipe(dest(distDir));
 }
 
 /**
  * Build all skins
  */
-g.task('build-skins', function(done) {
+function buildSkins(done) {
     // Ensure dist directory exists
     if (!fs.existsSync(distDir)) {
         fs.mkdirSync(distDir, { recursive: true });
     }
 
-    var skins = getSkinDirs();
+    const skins = getSkinDirs();
 
     if (skins.length === 0) {
         console.log('No skins found in ' + skinsDir);
@@ -62,12 +62,12 @@ g.task('build-skins', function(done) {
 
     console.log('Building skins:', skins.join(', '));
 
-    var tasks = skins.map(function(skin) {
+    const tasks = skins.map(function(skin) {
         return buildSkin(skin);
     });
 
     // Wait for all tasks to complete
-    var completed = 0;
+    let completed = 0;
     tasks.forEach(function(task) {
         task.on('end', function() {
             completed++;
@@ -76,21 +76,19 @@ g.task('build-skins', function(done) {
             }
         });
     });
-});
+}
 
 /**
  * Watch for skin changes
  */
-g.task('watch', function() {
-    g.watch(skinsDir + '/**/*.css', ['build-skins']);
-});
+function watchSkins() {
+    watch(skinsDir + '/**/*.css', buildSkins);
+}
 
 /**
- * Alias for build-skins
+ * Export tasks
  */
-g.task('build', ['build-skins']);
-
-/**
- * Default task: build and watch
- */
-g.task('default', ['build-skins', 'watch']);
+exports['build-skins'] = buildSkins;
+exports.build = buildSkins;
+exports.watch = watchSkins;
+exports.default = series(buildSkins, watchSkins);

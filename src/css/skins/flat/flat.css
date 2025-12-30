@@ -84,6 +84,7 @@ nav-bar .right-content {
     color: var(--flat-text-secondary);
     margin-top: 12px;
     margin-bottom: 12px;
+    padding-top: 0;
 }
 
 nav-bar .right-content a {

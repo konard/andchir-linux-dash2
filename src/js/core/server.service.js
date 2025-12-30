@@ -135,6 +135,9 @@ angular
 
           return $http.get(moduleAddress).then(function(response) {
             return callback(response.data);
+          },
+          (err) => {
+            // console.log("rejected with", err);
           });
 
         }

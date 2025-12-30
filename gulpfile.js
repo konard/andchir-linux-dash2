@@ -22,6 +22,7 @@ function generateJsDist() {
     'node_modules/angular-route/angular-route.min.js',
     'node_modules/smoothie/smoothie.js',
     'node_modules/sortablejs/Sortable.min.js',
+    'src/js/core/app.js',
     'src/js/**/*.js',
     'temp/templates.js'
   ])

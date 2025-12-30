@@ -1,0 +1,468 @@
+/**
+ * Flat Skin for Linux Dash
+ *
+ * A modern flat design with:
+ * - Rounded corners
+ * - Soft shadows
+ * - No thin lines
+ * - Clean typography
+ */
+
+/* =====================================================
+   Color Variables (CSS Custom Properties)
+   ===================================================== */
+:root {
+    --flat-primary: #5c6bc0;
+    --flat-primary-dark: #3949ab;
+    --flat-primary-light: #7986cb;
+    --flat-accent: #26a69a;
+    --flat-accent-dark: #00897b;
+    --flat-background: #f5f7fa;
+    --flat-surface: #ffffff;
+    --flat-surface-alt: #fafbfc;
+    --flat-text: #37474f;
+    --flat-text-secondary: #78909c;
+    --flat-border: #e8eaed;
+    --flat-success: #66bb6a;
+    --flat-warning: #ffca28;
+    --flat-error: #ef5350;
+    --flat-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --flat-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --flat-radius: 12px;
+    --flat-radius-sm: 8px;
+    --flat-radius-lg: 16px;
+}
+
+/* =====================================================
+   Base Styles
+   ===================================================== */
+body {
+    background-color: var(--flat-background);
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--flat-text);
+}
+
+/* =====================================================
+   Navigation Bar
+   ===================================================== */
+nav-bar {
+    background: linear-gradient(135deg, var(--flat-primary) 0%, var(--flat-primary-dark) 100%);
+    box-shadow: var(--flat-shadow);
+    border-radius: 0 0 var(--flat-radius) var(--flat-radius);
+    height: 48px;
+    padding-top: 6px;
+}
+
+nav-bar .title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+nav-bar ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav-bar ul li a:hover {
+    color: #ffffff;
+}
+
+nav-bar ul li.active {
+    border-bottom: 3px solid #ffffff;
+}
+
+nav-bar ul li.active a {
+    color: #ffffff;
+}
+
+nav-bar .right-content,
+nav-bar .right-content a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+nav-bar .right-content a:hover {
+    color: #ffffff;
+}
+
+/* =====================================================
+   Plugins Container
+   ===================================================== */
+#plugins {
+    padding: 20px 10%;
+}
+
+/* =====================================================
+   Plugin Cards
+   ===================================================== */
+.plugin {
+    background-color: var(--flat-surface);
+    border-radius: var(--flat-radius-lg);
+    box-shadow: var(--flat-shadow);
+    border: none;
+    margin: 20px 20px 0 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.plugin:hover {
+    box-shadow: var(--flat-shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   Plugin Top Bar
+   ===================================================== */
+.top-bar {
+    background: linear-gradient(135deg, var(--flat-surface-alt) 0%, var(--flat-surface) 100%);
+    border-bottom: none;
+    padding: 18px 20px;
+    height: auto;
+}
+
+.top-bar .heading {
+    color: var(--flat-primary);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.plugin-hidden .top-bar .heading {
+    color: var(--flat-text-secondary);
+}
+
+/* =====================================================
+   Plugin Action Buttons
+   ===================================================== */
+.ld-top-bar-btn {
+    background: var(--flat-surface);
+    border: none;
+    border-radius: var(--flat-radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--flat-primary);
+    width: 34px;
+    height: 34px;
+    transition: all 0.2s ease;
+}
+
+.ld-top-bar-btn:hover {
+    background: var(--flat-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(92, 107, 192, 0.3);
+}
+
+.ld-refresh-btn:hover {
+    background: var(--flat-accent);
+    color: #ffffff;
+}
+
+.ld-refresh-btn:active {
+    background: var(--flat-accent-dark);
+}
+
+.plugin-hidden .minimize-btn,
+.plugin-enlarged .width-toggle-btn {
+    background: var(--flat-background);
+    color: var(--flat-text-secondary);
+}
+
+/* =====================================================
+   Plugin Body
+   ===================================================== */
+.plugin-body {
+    background-color: var(--flat-surface);
+    border-top: none;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   Progress Bars (thicker, more prominent)
+   ===================================================== */
+.progress-bar {
+    background-color: var(--flat-background);
+    border-radius: var(--flat-radius-sm);
+    padding: 0;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-bar > div {
+    background: linear-gradient(90deg, var(--flat-accent) 0%, var(--flat-success) 100%);
+    height: 12px;
+    border-radius: var(--flat-radius-sm);
+    transition: width 0.5s ease;
+}
+
+/* =====================================================
+   Tables
+   ===================================================== */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table th {
+    background-color: var(--flat-surface-alt);
+    color: var(--flat-text);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 14px 16px;
+    border-bottom: none;
+}
+
+table th:first-child {
+    border-radius: var(--flat-radius-sm) 0 0 0;
+}
+
+table th:last-child {
+    border-radius: 0 var(--flat-radius-sm) 0 0;
+}
+
+table td {
+    padding: 12px 16px;
+    border-bottom: none;
+    background-color: var(--flat-surface);
+}
+
+table tr:nth-child(even) td {
+    background-color: var(--flat-surface-alt);
+}
+
+table tr:hover td {
+    background-color: rgba(92, 107, 192, 0.05);
+}
+
+table tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--flat-radius-sm);
+}
+
+table tr:last-child td:last-child {
+    border-radius: 0 0 var(--flat-radius-sm) 0;
+}
+
+/* =====================================================
+   Key-Value List
+   ===================================================== */
+.key-value-list {
+    padding: 8px 0;
+}
+
+.key-value-list .row {
+    padding: 10px 16px;
+    border-radius: var(--flat-radius-sm);
+    margin-bottom: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.key-value-list .row:hover {
+    background-color: var(--flat-surface-alt);
+}
+
+.key-value-list .key {
+    color: var(--flat-text-secondary);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.key-value-list .value {
+    color: var(--flat-text);
+    font-weight: 600;
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+    background: var(--flat-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--flat-radius-sm);
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(92, 107, 192, 0.2);
+}
+
+button:hover,
+.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background: var(--flat-primary-dark);
+    box-shadow: 0 4px 12px rgba(92, 107, 192, 0.3);
+    transform: translateY(-1px);
+}
+
+button:active,
+.button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   Inputs
+   ===================================================== */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    background-color: var(--flat-surface);
+    border: 2px solid var(--flat-border);
+    border-radius: var(--flat-radius-sm);
+    padding: 10px 14px;
+    font-size: 14px;
+    color: var(--flat-text);
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--flat-primary);
+    box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.15);
+    outline: none;
+}
+
+/* Table filter input */
+.table-data input[type="text"] {
+    border: 2px solid var(--flat-border);
+    border-radius: var(--flat-radius-sm);
+    padding: 8px 12px;
+}
+
+.table-data input[type="text"]:focus {
+    border-color: var(--flat-primary);
+    box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.15);
+}
+
+/* =====================================================
+   Scrollbars
+   ===================================================== */
+.plugin ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.plugin ::-webkit-scrollbar-track {
+    background: var(--flat-background);
+    border-radius: var(--flat-radius-sm);
+    border: none;
+    box-shadow: none;
+}
+
+.plugin ::-webkit-scrollbar-thumb {
+    background: var(--flat-border);
+    border-radius: var(--flat-radius-sm);
+    border: 2px solid var(--flat-background);
+}
+
+.plugin ::-webkit-scrollbar-thumb:hover {
+    background: var(--flat-text-secondary);
+}
+
+/* =====================================================
+   Charts
+   ===================================================== */
+.plugin.chart-plugin {
+    border-radius: var(--flat-radius-lg);
+}
+
+.plugin.chart-plugin .plugin-body {
+    padding: 0;
+    border-radius: 0 0 var(--flat-radius-lg) var(--flat-radius-lg);
+    overflow: hidden;
+}
+
+/* =====================================================
+   Loader
+   ===================================================== */
+.ld-loader {
+    border-radius: 50%;
+}
+
+.ld-loader::after {
+    border-color: var(--flat-primary) transparent transparent transparent;
+    border-width: 3px;
+}
+
+/* =====================================================
+   Responsive Adjustments
+   ===================================================== */
+@media (max-width: 768px) {
+    nav-bar {
+        border-radius: 0;
+    }
+
+    .plugin {
+        margin: 15px auto;
+        border-radius: var(--flat-radius);
+    }
+
+    #plugins {
+        padding: 10px 5%;
+    }
+}
+
+@media (max-width: 950px) {
+    .plugin {
+        margin: 15px 10px 0 0;
+    }
+}
+
+/* =====================================================
+   Animations
+   ===================================================== */
+@keyframes flatFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plugin {
+    animation: flatFadeIn 0.4s ease-out;
+}
+
+/* =====================================================
+   Print Styles
+   ===================================================== */
+@media print {
+    nav-bar {
+        background: #333;
+        box-shadow: none;
+    }
+
+    .plugin {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+
+    .ld-top-bar-btn {
+        display: none;
+    }
+}

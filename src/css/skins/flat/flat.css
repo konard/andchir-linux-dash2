@@ -329,6 +329,7 @@ table tr:last-child td:last-child {
 
 .table-data-plugin .filter-container {
     background-color: var(--flat-surface-alt);
+    padding-bottom: 12px;
 }
 
 .table-data-plugin .filter,

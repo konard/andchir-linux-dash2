@@ -129,7 +129,7 @@ A modern, flat dark theme featuring:
 - Teal/green accents for progress bars
 - Smooth animations and transitions
 
-![Flat Skin Screenshot](https://raw.githubusercontent.com/konard/andchir-linux-dash2/issue-1-8b730620b3a9/screenshots/flat-skin-screenshot.png)
+![Flat Skin Screenshot](https://raw.githubusercontent.com/andchir/linux-dash2/refs/heads/master/screenshots/flat-skin.png)
 
 ### Using a Skin
 

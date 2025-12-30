@@ -10,6 +10,7 @@ import sys
 import subprocess
 import argparse
 import mimetypes
+import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
 
@@ -35,7 +36,12 @@ class MainHandler(BaseHTTPRequestHandler):
             data = b''
             contentType = 'text/html'
 
-            if self.path.startswith("/server/"):
+            if self.path == "/websocket":
+                # Websocket support check - Python server doesn't support websockets
+                response = {"websocket_support": False}
+                data = json.dumps(response).encode('utf-8')
+                contentType = 'application/json'
+            elif self.path.startswith("/server/"):
                 # API call - execute shell script
                 module = self.path.split('=')[1]
                 output = subprocess.Popen(

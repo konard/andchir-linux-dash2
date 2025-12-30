@@ -218,7 +218,8 @@ nav-bar .right-content a:hover {
 }
 
 /* Remove horizontal padding for table plugins so tables stretch to full width */
-.table-data-plugin .plugin-body {
+.table-data-plugin .plugin-body,
+.plugin-body:has(table) {
     padding-left: 0;
     padding-right: 0;
 }

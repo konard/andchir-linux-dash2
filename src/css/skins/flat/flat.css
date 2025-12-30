@@ -83,6 +83,7 @@ nav-bar ul li.active a {
 nav-bar .right-content,
 nav-bar .right-content a {
     color: var(--flat-text-secondary);
+    padding-top: 8px;
 }
 
 nav-bar .right-content a:hover {
@@ -243,13 +244,24 @@ table {
 
 table th {
     background-color: var(--flat-surface-alt);
-    color: var(--flat-text-secondary);
+    color: var(--flat-text);
     font-weight: 600;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     padding: 14px 16px;
     border-bottom: 1px solid var(--flat-border);
+}
+
+table th a,
+table th a:visited,
+table th a:link {
+    color: var(--flat-text);
+    text-decoration: none;
+}
+
+table th a:hover {
+    color: var(--flat-primary-light);
 }
 
 table th:first-child {

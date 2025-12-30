@@ -50,7 +50,7 @@ body {
 nav-bar {
     background: var(--flat-surface);
     border-radius: 0 0 var(--flat-radius) var(--flat-radius);
-    height: 48px;
+    height: auto;
     padding-top: 6px;
     border-bottom: 1px solid var(--flat-border);
 }
@@ -475,6 +475,8 @@ textarea::placeholder {
 .plugin ::-webkit-scrollbar-track {
     background: var(--flat-surface);
     border-radius: var(--flat-radius-sm);
+    border: none;
+    box-shadow: none;
 }
 
 .plugin ::-webkit-scrollbar-thumb {

@@ -17,7 +17,7 @@ angular.module('linuxDash').directive('topBar', ['$rootScope', function($rootSco
         <button \
           class="ld-top-bar-btn minimize-btn" \
           ng-click="toggleVisibility()" \
-          ng-class="{ active: isHidden }"><i class="bi bi-dash-lg"></i></button> \
+          ng-class="{ active: isHidden }"><i class="bi bi-arrows-expand"></i></button> \
         \
         \
         <button class="ld-top-bar-btn width-toggle-btn" ng-if="toggleWidth && !isChart" ng-click="toggleWidth()"><i class="bi bi-arrows-expand-vertical"></i></button> \

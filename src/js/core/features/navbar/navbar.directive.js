@@ -6,7 +6,7 @@ angular.module('linuxDash').directive('navBar', ['$location', function($location
       \
       <ul> \
         <li ng-class="{active: isActive(navItem) }" ng-repeat="navItem in items"> \
-          <a href="#/{{navItem}}" ng-bind="getNavItemName(navItem)"></a> \
+          <a href="#!/{{navItem}}" ng-bind="getNavItemName(navItem)"></a> \
         </li> \
       </ul> \
       <span class="right-content">\

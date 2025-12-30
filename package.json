@@ -21,7 +21,8 @@
     "url": "https://github.com/afaqurk/linux-dash/issues"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "homepage": "https://github.com/afaqurk/linux-dash",
   "dependencies": {

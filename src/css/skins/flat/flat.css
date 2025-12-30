@@ -80,10 +80,13 @@ nav-bar ul li.active a {
     color: var(--flat-primary-light);
 }
 
-nav-bar .right-content,
+nav-bar .right-content {
+    color: var(--flat-text-secondary);
+    margin-top: 12px;
+}
+
 nav-bar .right-content a {
     color: var(--flat-text-secondary);
-    padding-top: 8px;
 }
 
 nav-bar .right-content a:hover {
@@ -214,6 +217,12 @@ nav-bar .right-content a:hover {
     color: var(--flat-text);
 }
 
+/* Remove horizontal padding for table plugins so tables stretch to full width */
+.table-data-plugin .plugin-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* =====================================================
    Progress Bars
    ===================================================== */
@@ -265,11 +274,11 @@ table th a:hover {
 }
 
 table th:first-child {
-    border-radius: var(--flat-radius-sm) 0 0 0;
+    border-radius: 0;
 }
 
 table th:last-child {
-    border-radius: 0 var(--flat-radius-sm) 0 0;
+    border-radius: 0;
 }
 
 table td {
@@ -292,11 +301,11 @@ table tr:last-child td {
 }
 
 table tr:last-child td:first-child {
-    border-radius: 0 0 0 var(--flat-radius-sm);
+    border-radius: 0;
 }
 
 table tr:last-child td:last-child {
-    border-radius: 0 0 var(--flat-radius-sm) 0;
+    border-radius: 0;
 }
 
 /* =====================================================

@@ -49,6 +49,9 @@ class MainHandler(BaseHTTPRequestHandler):
             else:
                 # Static file serving
                 path = self.path
+                # Strip query string if present
+                if '?' in path:
+                    path = path.split('?')[0]
                 if path == '/':
                     path = 'index.html'
                 if path.startswith('/'):

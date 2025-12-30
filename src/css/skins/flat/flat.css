@@ -139,12 +139,19 @@ nav-bar .right-content a:hover {
     flex: 1;
 }
 
+/* Bootstrap Icon in heading */
+.top-bar .heading .bi {
+    margin-right: 6px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
 .plugin-hidden .top-bar .heading {
     color: var(--flat-text-muted);
 }
 
 /* =====================================================
-   Plugin Action Buttons
+   Plugin Action Buttons (using Bootstrap Icons)
    ===================================================== */
 .ld-top-bar-btn {
     background: var(--flat-surface);
@@ -160,26 +167,34 @@ nav-bar .right-content a:hover {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 1;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;
     transition: all 0.2s ease;
 }
 
-/* Fine-tune icon centering for specific buttons */
-.ld-top-bar-btn.minimize-btn {
+/* Bootstrap Icons styling in buttons */
+.ld-top-bar-btn .bi {
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fine-tune icon sizing for specific buttons */
+.ld-top-bar-btn.minimize-btn .bi {
     font-size: 18px;
     font-weight: bold;
-    padding-bottom: 2px; /* Adjust '-' character visual centering */
 }
 
-.ld-top-bar-btn.width-toggle-btn {
-    font-size: 13px;
+.ld-top-bar-btn.width-toggle-btn .bi {
+    font-size: 14px;
 }
 
-.ld-top-bar-btn.refresh-btn {
-    font-size: 15px;
+.ld-top-bar-btn.refresh-btn .bi {
+    font-size: 14px;
 }
 
 .ld-top-bar-btn:hover {

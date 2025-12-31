@@ -96,10 +96,10 @@ To build a binary, run `go build && ./server -h`. See [@tehbilly](https://github
 python index.py
 
 # For Python 3 (recommended)
-python3 server/python3.py --port 8080
+python3 server/server_py3.py --port 8080
 ```
 
-The Python 3 server (`server/python3.py`) includes:
+The Python 3 server (`server/server_py3.py`) includes:
 - Modern Python 3 syntax using `http.server` and `socketserver`
 - Improved MIME type handling
 - Protection against directory traversal attacks
